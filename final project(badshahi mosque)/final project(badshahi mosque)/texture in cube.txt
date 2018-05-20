@@ -1,0 +1,59 @@
+glPushMatrix();{
+		glTranslatef(54,15,80);
+	glPushMatrix();{
+			glColor3f(1,1,1);
+			glRotatef(90,0,1,0);
+			glScalef(40,1,35);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, upsidewinimg);
+			customSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+	}glPopMatrix();
+
+
+
+
+
+void solidCube1Part(double size) {
+	glBegin(GL_QUADS);
+	glTexCoord2f(0, 1);
+	glVertex3f(-size, 0, size);
+	glTexCoord2f(0, 0);
+	glVertex3f(size, 0, size);
+	glTexCoord2f(1, 0);
+	glVertex3f(size, 0, -size);
+	glTexCoord2f(1, 1);
+	glVertex3f(-size, 0, -size);
+	glEnd();
+}
+
+// up and down part
+void solidCube2Part(double size) {
+	solidCube1Part(size);
+	glRotated(90, 1, 0, 0);
+	glTranslated(0, -size, -size);
+	solidCube1Part(size);
+}
+
+void customSolidCube(double size) {
+	glPushMatrix(); {
+		glTranslated(0, -size/2, 0);
+		solidCube2Part(size/2);
+		glRotated(90, 1, 0, 0);
+		glTranslated(0, -size/2, -size/2);
+		solidCube2Part(size/2);
+	}glPopMatrix();
+
+	glPushMatrix(); {
+		glRotated(90, 0, 0, 1);
+		glTranslated(0, size/2, 0);
+		solidCube1Part(size/2);
+	}glPopMatrix();
+
+	glPushMatrix(); {
+		glRotated(90, 0, 0, 1);
+		glTranslated(0, -size/2, 0);
+		solidCube1Part(size/2);
+	}glPopMatrix();
+}

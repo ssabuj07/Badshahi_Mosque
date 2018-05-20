@@ -1,0 +1,485 @@
+void piller(){
+
+
+	//// uprer gombuj
+	glPushMatrix();{
+		glTranslatef(0,25,74);
+		glScalef(.4,.4,.4);
+		drawGambuj();
+
+	}glPopMatrix();
+
+
+	////gombuj jekhane bosbe seta 
+	/*
+	glPushMatrix();{
+	glTranslatef(0,25,70);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D,w6img);
+	glColor3f(1,1,1);
+	GLUquadric *obj = gluNewQuadric();
+	//gluQuadricTexture(obj, GL_TRUE);
+	gluCylinder(obj,30,30,8,20,20);
+	glDisable(GL_TEXTURE_2D);
+	}glPopMatrix();
+
+	*/
+
+	///pillar er uporer 8 kona part..
+	glPushMatrix();
+	{
+		glTranslatef(0,25,68);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D,w6img);
+		glColor3f(1,1,1);
+		glScalef(1,1,.2);
+		glutSolidTorus(23,23,8,8);
+		glDisable(GL_TEXTURE_2D);
+	}glPopMatrix();
+
+	/*
+	double equation[4];
+	equation[0] = 0;
+	equation[1] = 0;
+	equation[2] = 1;
+	equation[3] = -20;
+
+	glPushMatrix();
+	{
+	glClipPlane(GL_CLIP_PLANE0, equation);
+
+	glEnable(GL_CLIP_PLANE0);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D,minar);
+	glColor3f(1,1,1);
+	GLUquadric *qobj  = gluNewQuadric();
+	gluQuadricTexture(qobj, GL_TRUE);
+	gluSphere(qobj,70, 20, 20);
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_CLIP_PLANE0);
+	}
+	glPopMatrix();
+	*/
+
+	//dui piller er bakano part
+	/*
+	glPushMatrix();
+	{
+	glColor3f(.3,.3,.3);
+	glTranslatef(0,10,0);
+	glRotatef(90,1,0,0);
+	double equ[4];
+	equ[0]=0;
+	equ[1]=1;
+	equ[2]=0;
+	equ[3]=0;
+	glClipPlane(GL_CLIP_PLANE0,equ);
+	glEnable(GL_CLIP_PLANE0);{
+	glScalef(.5,1,.2);
+	glutSolidTorus(4,30,50,50);
+	}glDisable(GL_CLIP_PLANE0);
+
+	}glPopMatrix();
+	*/
+	/*
+	glPushMatrix();
+	{
+
+	glColor3f(0,1,1);
+	GLUquadric *qobj  = gluNewQuadric();
+	//glutWireSphere(10,10,5);
+	//glScalef(2,2,2);
+	glutSolidTorus(3,6,20,20);
+	//glutSolidDodecahedron();
+	//gluSphere(qobj,70, 20, 20);
+	}
+	glPopMatrix();
+	*/
+	//for(int i=0; i<=5; i++){
+
+	//pillar base
+
+
+
+
+
+	glPushMatrix();{
+		//glRotatef(54,0,0,1);
+
+
+		glPushMatrix();{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			glTranslatef(0,0,5);
+			glScalef(15,15,10);
+			glutSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//pillar top
+
+		glPushMatrix();{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			glTranslatef(0,0,60);
+			glScalef(15,15,10);
+			glutSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//main pillar
+
+		glPushMatrix();{
+			glTranslatef(0,0,4);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			GLUquadric *obj = gluNewQuadric();
+			//gluQuadricTexture(obj, GL_TRUE);
+			gluCylinder(obj,4,4,60,20,20);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//dui pillar er bakano part
+
+		glPushMatrix();{
+			//glRotatef(45,1,1,0);
+			glTranslatef(15,0,50);
+			glPushMatrix();
+			{
+				//glColor3f(.3,.3,.3);
+				glColor3f(.8,.4,0);
+				glTranslatef(0,0,0);
+				glRotatef(90,1,0,0);
+				double equ[4];
+				equ[0]=0;
+				equ[1]=1;
+				equ[2]=0;
+				equ[3]=0;
+				glClipPlane(GL_CLIP_PLANE0,equ);
+				glEnable(GL_CLIP_PLANE0);{
+					glScalef(.3,.5,.5);
+					glutSolidTorus(8,30,50,50);
+				}glDisable(GL_CLIP_PLANE0);
+
+			}glPopMatrix();
+		}
+		glPopMatrix();
+
+		//2nd pillar
+		glPushMatrix();{
+			glTranslatef(30,0,0);
+			//pillar base
+
+			glPushMatrix();{
+				glEnable(GL_TEXTURE_2D);
+				glBindTexture(GL_TEXTURE_2D,w6img);
+				glColor3f(1,1,1);
+				glTranslatef(0,0,5);
+				glScalef(15,15,10);
+				glutSolidCube(1);
+				glDisable(GL_TEXTURE_2D);
+			}glPopMatrix();
+
+			//pillar top
+
+			glPushMatrix();{
+				glEnable(GL_TEXTURE_2D);
+				glBindTexture(GL_TEXTURE_2D,w6img);
+				glColor3f(1,1,1);
+				glTranslatef(0,0,60);
+				glScalef(15,15,10);
+				glutSolidCube(1);
+				glDisable(GL_TEXTURE_2D);
+			}glPopMatrix();
+			glPushMatrix();{
+				glTranslatef(0,0,4);
+				glEnable(GL_TEXTURE_2D);
+				glBindTexture(GL_TEXTURE_2D,w6img);
+				glColor3f(1,1,1);
+				GLUquadric *obj = gluNewQuadric();
+				//gluQuadricTexture(obj, GL_TRUE);
+				gluCylinder(obj,4,4,60,20,20);
+				glDisable(GL_TEXTURE_2D);
+			}glPopMatrix();
+		}
+		glPopMatrix();
+		/*
+		glPushMatrix();{
+		//glRotatef(45,1,1,0);
+		glTranslatef(45,0,50);
+		glPushMatrix();
+		{
+		glColor3f(.3,.3,.3);
+		glTranslatef(0,0,0);
+		glRotatef(90,1,0,0);
+		double equ[4];
+		equ[0]=0;
+		equ[1]=1;
+		equ[2]=0;
+		equ[3]=0;
+		glClipPlane(GL_CLIP_PLANE0,equ);
+		glEnable(GL_CLIP_PLANE0);{
+		glScalef(.3,.5,.5);
+		glutSolidTorus(8,30,50,50);
+		}glDisable(GL_CLIP_PLANE0);
+
+		}glPopMatrix();
+		}
+		glPopMatrix();*/
+
+	}glPopMatrix();
+
+
+	//////// left 2 piller /////////////////////////////////////////////////
+
+	glPushMatrix();{
+		glTranslatef(0,50,0);
+		glRotatef(-45,0,0,1);
+
+		///pillar base
+		glPushMatrix();{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			glTranslatef(0,0,5);
+			glScalef(15,15,10);
+			glutSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//pillar top
+
+		glPushMatrix();{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			glTranslatef(0,0,60);
+			glScalef(15,15,10);
+			glutSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//main pillar
+
+		glPushMatrix();{
+			glTranslatef(0,0,4);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			GLUquadric *obj = gluNewQuadric();
+			//gluQuadricTexture(obj, GL_TRUE);
+			gluCylinder(obj,4,4,60,20,20);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//dui pillar er bakano part
+
+		glPushMatrix();{
+			//glRotatef(45,1,1,0);
+			glTranslatef(15,0,50);
+			glPushMatrix();
+			{
+				//glColor3f(.3,.3,.3);
+				glColor3f(.8,.4,0);
+				glTranslatef(0,0,0);
+				glRotatef(90,1,0,0);
+				double equ[4];
+				equ[0]=0;
+				equ[1]=1;
+				equ[2]=0;
+				equ[3]=0;
+				glClipPlane(GL_CLIP_PLANE0,equ);
+				glEnable(GL_CLIP_PLANE0);{
+					glScalef(.3,.5,.5);
+					glutSolidTorus(8,30,50,50);
+				}glDisable(GL_CLIP_PLANE0);
+
+			}glPopMatrix();
+		}
+		glPopMatrix();
+		/*
+		//2nd pillar
+		glPushMatrix();{
+		glTranslatef(30,0,0);
+		//pillar base
+
+		glPushMatrix();{
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D,w6img);
+		glColor3f(1,1,1);
+		glTranslatef(0,0,5);
+		glScalef(15,15,10);
+		glutSolidCube(1);
+		glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//pillar top
+
+		glPushMatrix();{
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D,w6img);
+		glColor3f(1,1,1);
+		glTranslatef(0,0,60);
+		glScalef(15,15,10);
+		glutSolidCube(1);
+		glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+		glPushMatrix();{
+		glTranslatef(0,0,4);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D,w6img);
+		glColor3f(1,1,1);
+		GLUquadric *obj = gluNewQuadric();
+		//gluQuadricTexture(obj, GL_TRUE);
+		gluCylinder(obj,6,6,60,20,20);
+		glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+		}
+		glPopMatrix();
+		glPushMatrix();{
+		//glRotatef(45,1,1,0);
+		glTranslatef(45,0,50);
+		glPushMatrix();
+		{
+		glColor3f(.3,.3,.3);
+		glTranslatef(0,0,0);
+		glRotatef(90,1,0,0);
+		double equ[4];
+		equ[0]=0;
+		equ[1]=1;
+		equ[2]=0;
+		equ[3]=0;
+		glClipPlane(GL_CLIP_PLANE0,equ);
+		glEnable(GL_CLIP_PLANE0);{
+		glScalef(.3,.5,.5);
+		glutSolidTorus(8,30,50,50);
+		}glDisable(GL_CLIP_PLANE0);
+
+		}glPopMatrix();
+		}
+		glPopMatrix();
+		*/
+
+	}glPopMatrix();
+
+
+
+	////// left pillar between two pillar ///////////////////////////////
+
+
+	//////total left  ///////////
+	glPushMatrix();{
+
+		glTranslatef(-25,25,0);
+		glRotatef(54,0,0,1);
+
+		////bakano ////////////////////////////
+		glPushMatrix();{
+			//glRotatef(45,1,1,0);
+			glTranslatef(18.6,0,50);
+			glPushMatrix();
+			{
+				//glColor3f(.3,.3,.3);
+				glColor3f(.8,.4,0);
+				glTranslatef(0,0,0);
+				glRotatef(90,1,0,0);
+				double equ[4];
+				equ[0]=0;
+				equ[1]=1;
+				equ[2]=0;
+				equ[3]=0;
+				glClipPlane(GL_CLIP_PLANE0,equ);
+				glEnable(GL_CLIP_PLANE0);{
+					glScalef(.4,.5,.5);
+					glutSolidTorus(8,30,50,50);
+				}glDisable(GL_CLIP_PLANE0);
+
+			}glPopMatrix();
+		}glPopMatrix();
+
+		////base //////////////////
+		glPushMatrix();{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			glTranslatef(0,0,5);
+			glScalef(15,15,10);
+			glutSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//pillar top
+
+		glPushMatrix();{
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			glTranslatef(0,0,60);
+			glScalef(15,15,10);
+			glutSolidCube(1);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+		//main pillar
+
+		glPushMatrix();{
+			glTranslatef(0,0,4);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D,w6img);
+			glColor3f(1,1,1);
+			GLUquadric *obj = gluNewQuadric();
+			//gluQuadricTexture(obj, GL_TRUE);
+			gluCylinder(obj,4,4,60,20,20);
+			glDisable(GL_TEXTURE_2D);
+		}glPopMatrix();
+
+	}glPopMatrix();
+
+	/// baka ////////////////
+	glPushMatrix();{
+		glTranslatef(-13.7,12,50);
+		glRotatef(-45,0,0,1);
+
+		glPushMatrix();
+		{
+			//glColor3f(.3,.3,.3);
+			glColor3f(.8,.4,0);
+			glTranslatef(0,0,0);
+			glRotatef(90,1,0,0);
+			double equ[4];
+			equ[0]=0;
+			equ[1]=1;
+			equ[2]=0;
+			equ[3]=0;
+			glClipPlane(GL_CLIP_PLANE0,equ);
+			glEnable(GL_CLIP_PLANE0);{
+				glScalef(.36,.5,.5);
+				glutSolidTorus(8,30,50,50);
+			}glDisable(GL_CLIP_PLANE0);
+
+		}glPopMatrix();
+	}
+	glPopMatrix();
+
+	/*
+	if(i==0)
+	glTranslatef(25,25,0);
+	else if(i==1)
+	glTranslatef(0,25,0);
+	else if(i==2)
+	glTranslatef(-25,25,0);
+	else if(i==3)
+	glTranslatef(-25,-25,0);
+	else if(i==4)
+	glTranslatef(0,-25,0);
+	else
+	glTranslatef(0,0,0);
+	//glRotatef();
+	}
+
+	*/
+
+}
